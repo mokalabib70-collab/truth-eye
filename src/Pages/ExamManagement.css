@@ -1,0 +1,125 @@
+/* ===== ExamManagementContent.css ===== */
+.emc-wrap {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header */
+.emc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap; /* عشان في الشاشات الصغيرة يتحرك للصف */
+}
+
+.emc-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.emc-btn-create {
+  background: #1c5332;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.emc-btn-create:hover { background: #154026; }
+
+/* List */
+.emc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.emc-empty {
+  text-align: center;
+  color: #888;
+  font-size: 15px;
+  padding: 60px 0;
+}
+
+/* Card */
+.emc-card {
+  background: #fffafa;
+  border-radius: 20px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px solid #e8e8e0;
+  gap: 20px;
+  flex-wrap: wrap; /* عشان المحتوى يلتف بدل ما يكسر التصميم */
+}
+
+.emc-card__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.emc-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.emc-card__meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #444;
+}
+
+/* Actions */
+.emc-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.emc-card__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.15s;
+}
+
+.emc-card__btn:hover { opacity: 0.7; }
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1024px) {
+  .emc-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .emc-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+@media (max-width: 768px) {
+  .emc-card__meta { gap: 12px; }
+  .emc-card__actions { gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .emc-title { font-size: 20px; }
+  .emc-btn-create { width: 100%; padding: 12px; }
+  .emc-card { padding: 16px; }
+  .emc-card__title { font-size: 16px; }
+}

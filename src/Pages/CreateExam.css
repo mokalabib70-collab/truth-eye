@@ -1,0 +1,313 @@
+/* ===== CreateExamContent.css ===== */
+.cec-wrap {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cec-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cec-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.cec-btn-add {
+  background: #1c5332;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cec-btn-add:hover { background: #154026; }
+
+.cec-card {
+  background: #fffafa;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid #e8e8e0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.cec-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.cec-field--full { width: 100%; }
+
+.cec-field label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.cec-field input,
+.cec-field select {
+  height: 44px;
+  border: 1px solid #d0d0c8;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  background: #ffffff;
+  outline: none;
+  width: 100%;
+}
+
+.cec-field input:focus { border-color: #1c5332; }
+
+.cec-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cec-select-wrap select {
+  appearance: none;
+  padding-right: 36px;
+  cursor: pointer;
+  color: #888;
+}
+
+.cec-select-wrap svg {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+}
+
+.cec-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Question cards */
+.cec-question-card {
+ background-color: #fffafa; /* أبيض صريح حسب التصميم */
+  border-radius: 20px; /* زوايا دائرية كبيرة ومريحة */
+  padding: 24px;
+  border: 1px solid #f0f0f0; /* حدود خفيفة جداً */
+  margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.cec-question-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cec-question-card__header h3 {
+ font-size: 22px; 
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.cec-question-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cec-question-card__meta span {
+ font-size: 18px;
+  font-weight: 600; /* خط أوضح للنقاط */
+  color: #555;
+  margin-right: 10px;
+}
+
+.cec-btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  transition: opacity 0.15s;
+}
+
+.cec-btn-icon:hover { opacity: 0.7; }
+
+.cec-question-card__text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+}
+
+.cec-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.cec-option {
+ display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1.5px solid #eee; /* لون الحدود الفاتح في التصميم */
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 550px; /* تحديد العرض ليكون مثل Figma */
+  transition: all 0.2s ease;
+}
+
+.cec-option-radio {
+ width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #1a1a1a; /* دائرة سوداء واضحة */
+  flex-shrink: 0;
+}
+
+.cec-essay {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #d0d0c8;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #aaa;
+  background: #fffafa;
+  resize: vertical;
+  outline: none;
+}
+
+/* ============================= */
+/* ✅ Responsive Design */
+/* ============================= */
+
+
+/* ---------- Large Screens / Laptop ---------- */
+@media (min-width: 1200px) {
+
+  .cec-card {
+    padding: 40px;
+  }
+
+  .cec-option {
+    max-width: 650px;
+  }
+
+}
+
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+
+  .cec-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .cec-card {
+    padding: 25px;
+  }
+
+  .cec-question-card {
+    padding: 20px;
+  }
+
+  .cec-option {
+    max-width: 100%;
+  }
+
+}
+
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+
+  .cec-wrap {
+    gap: 18px;
+  }
+
+  .cec-title {
+    font-size: 18px;
+  }
+
+  .cec-btn-add {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .cec-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cec-question-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cec-question-card__meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cec-option {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+
+}
+
+
+/* ---------- Small Mobile ---------- */
+@media (max-width: 480px) {
+
+  .cec-card {
+    padding: 18px;
+  }
+
+  .cec-question-card {
+    padding: 16px;
+  }
+
+  .cec-question-card__header h3 {
+    font-size: 18px;
+  }
+
+  .cec-question-card__meta span {
+    font-size: 14px;
+  }
+
+  .cec-field input,
+  .cec-field select {
+    font-size: 12px;
+  }
+
+  .cec-essay {
+    min-height: 100px;
+  }
+
+}

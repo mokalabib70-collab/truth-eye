@@ -1,0 +1,250 @@
+/* ===== CoursesContent.css ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.cc-wrap {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%; /* نضمن إنه ميفردش بره الأب */
+  overflow-x: hidden;
+}
+
+/* ---- Courses Cards ---- */
+.cc-courses-section {
+  background: #fffafa;
+  border-radius: 12px;
+  border: 1px solid #e8e8e0;
+  padding: 24px 24px 16px;
+  position: relative;
+}
+
+.cc-cards-row {
+  display: grid;
+  grid-template-columns:  1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cc-course-card {
+  background: #fff;
+  border: 1px solid #e0e0d8;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.cc-course-code {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.cc-course-name {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.cc-course-meta {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.cc-course-meta strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Nav buttons */
+.cc-cards-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cc-nav-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d0d0c8;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.cc-nav-btn:hover { background: #f0f0e8; }
+.cc-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.cc-nav-btn--right { margin-left: auto; }
+
+/* ---- Table Section ---- */
+.cc-table-section {
+  background: #fffafa;
+  border-radius: 12px;
+  border: 1px solid #e8e8e0;
+  padding: 20px 24px 16px;
+}
+
+.cc-table-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.cc-search-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #d0d0c8;
+  border-radius: 8px;
+  padding: 0 14px;
+  height: 44px;
+  background: #fafaf8;
+}
+
+.cc-search-wrap input {
+  border: none;
+  background: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  width: 100%;
+}
+
+.cc-search-wrap input::placeholder { color: #aaa; }
+
+.cc-filter-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #d0d0c8;
+  border-radius: 8px;
+  background: #fafaf8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.cc-filter-btn:hover { background: #f0f0e8; }
+
+.cc-btn-export {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #1c5332;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 18px;
+  height: 44px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.cc-btn-export:hover { background: #154026; }
+
+/* Table */
+.cc-table-wrap {width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* نعومة في الـ scroll على الآيفون */
+  border-radius: 8px;}
+
+.cc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.cc-table th {
+  text-align: left;
+  padding: 11px 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  border-bottom: 1px solid #e8e8e0;
+  white-space: nowrap;
+}
+
+.cc-table td {
+  padding: 10px 14px;
+  color: #555;
+  border-bottom: 1px solid #f0f0e8;
+}
+
+.cc-table tr:last-child td { border-bottom: none; }
+
+/* Table nav */
+.cc-table-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+@media (max-width: 768px) {
+  .cc-table-filters {
+    display: flex;
+    flex-direction: column; /* ترتيب رأسي */
+    gap: 12px;
+  }
+  
+  .cc-search-wrap {
+    width: 100%; /* البحث ياخد العرض كامل */
+  }
+
+  .cc-filter-btn {
+    width: 100%; /* زرار الفلتر يبقى بعرض الشاشة في الموبايل أو نخليه جنبه */
+  }
+}
+@media (max-width: 480px) {
+  .cc-course-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط المحتوى في الموبايل الصغير */
+    text-align: center;
+  }
+
+  .cc-course-meta {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* المعلومات تترص بشكل أنضف */
+    border-bottom: 1px dashed #eee;
+    padding: 4px 0;
+  }
+}
+.cc-wrap {
+  width: 100%;
+  max-width: 100%; /* نضمن إنه ميفردش بره الأب */
+  overflow-x: hidden; /* يمنع أي سكرول جانبي مستفز */
+}
+
+.cc-cards-row {
+  display: grid;
+  /* خلي الكروت تاخد العرض المتاح بذكاء */
+  grid-template-columns: 1fr; 
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .cc-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cc-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

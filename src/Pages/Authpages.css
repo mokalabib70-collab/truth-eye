@@ -1,0 +1,365 @@
+/* ===== AuthPages.css ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Shared Layout ── */
+.auth-page {
+  min-height: 100vh;
+  background: #fffafa;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.auth-topbar__logo { height: 52px; width: auto; object-fit: contain; }
+
+.auth-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: #555;
+}
+
+.auth-topbar__btn {
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  background: #fffafa;
+  padding: 8px 22px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.auth-topbar__btn:hover { background: #f0f0e8; }
+
+/* Triangle background */
+.auth-bg-triangle {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 100vh 72vw;
+  border-color: transparent transparent #1c5332 transparent;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Content area */
+.auth-content {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 20px 40px 60px;
+}
+
+/* Card */
+.auth-card {
+  background: #fffafa;
+  border-radius: 18px;
+  padding: 48px 52px;
+  width: 660px;
+  max-width: 100%;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+  border: 1px solid #e8e8e0;
+}
+
+.auth-card__title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.auth-card__sub {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.auth-dark { color: #1a1a1a; }
+.auth-gold { color: #f3b300; }
+
+/* AI icon on right */
+.auth-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.auth-ai-icon {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  filter: brightness(0) invert(0.85) sepia(0.2) saturate(0.3);
+  opacity: 0.85;
+}
+
+/* ── Form elements ── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #d0d0c8;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fffafa;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.auth-input:focus { border-color: #1c5332; }
+.auth-input::placeholder { color: #bbb; }
+
+.auth-password-wrap { position: relative; }
+.auth-password-wrap .auth-input { padding-right: 46px; }
+
+.auth-pass-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.auth-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.auth-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #444;
+}
+.auth-checkbox input { display: none; }
+.auth-checkbox__box {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background: #1c5332;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-link {
+  background: none;
+  border: none;
+  color: #1a1a1a;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.auth-terms {
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
+}
+.auth-terms a { color: #1a1a1a; text-decoration: underline; }
+
+.auth-btn {
+  width: 100%;
+  height: 50px;
+  background: #1c5332;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 4px;
+}
+.auth-btn:hover { background: #154026; }
+
+/* ── OTP Boxes ── */
+.auth-otp {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.auth-otp__box {
+  width: 64px;
+  height: 72px;
+  border: 1.5px solid #d0d0c8;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #1a1a1a;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.15s;
+  caret-color: transparent;
+}
+
+.auth-otp__box:focus {
+  border-color: #1c5332;
+}
+
+.auth-otp__box--filled {
+  border-color: #f3b300;
+  color: #1a1a1a;
+}
+/* ============================= */
+/* ✅ Responsive Design */
+/* ============================= */
+
+
+/* ---------- Large Laptop ---------- */
+@media (min-width: 1400px) {
+
+  .auth-card {
+    width: 720px;
+  }
+
+  .auth-ai-icon {
+    width: 240px;
+    height: 240px;
+  }
+
+}
+
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+
+  .auth-content {
+    gap: 40px;
+    padding: 20px 30px 50px;
+  }
+
+  .auth-card {
+    padding: 40px;
+  }
+
+  .auth-ai-icon {
+    width: 170px;
+    height: 170px;
+  }
+
+}
+
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+
+  .auth-topbar {
+    padding: 16px 20px;
+  }
+
+  .auth-topbar__logo {
+    height: 42px;
+  }
+
+  .auth-content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  /* نخفي الـ AI icon في الموبايل */
+  .auth-icon-wrap {
+    display: none;
+  }
+
+  .auth-card {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .auth-card__title {
+    font-size: 20px;
+  }
+
+  .auth-input {
+    height: 46px;
+  }
+
+  .auth-btn {
+    height: 46px;
+  }
+
+  .auth-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+}
+
+
+/* ---------- Small Mobile ---------- */
+@media (max-width: 480px) {
+
+  .auth-card {
+    padding: 24px 16px;
+  }
+
+  .auth-card__title {
+    font-size: 18px;
+  }
+
+  .auth-card__sub {
+    font-size: 12px;
+  }
+
+  .auth-otp__box {
+    width: 48px;
+    height: 56px;
+    font-size: 20px;
+  }
+
+  .auth-bg-triangle {
+    border-width: 0 0 100vh 100vw;
+  }
+
+}

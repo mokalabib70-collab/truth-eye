@@ -1,0 +1,310 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ════════════════════════════════════════
+   OVERLAY
+════════════════════════════════════════ */
+.qm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;       /* center vertically */
+  justify-content: center;   /* center horizontally */
+  z-index: 9999 !important;
+  padding: 20px;
+  overflow-y: auto;          /* if viewport too short, overlay scrolls */
+}
+
+/* ════════════════════════════════════════
+   MODAL
+════════════════════════════════════════ */
+.qm-modal {
+  background: #fffafa;
+  border-radius: 16px;
+  padding: 32px;
+  width: 620px;
+  max-width: 100%;
+
+  /* KEY FIX: don't use max-height that cuts content */
+  /* Let it be as tall as it needs, overlay scrolls instead */
+  max-height: none;
+  overflow-y: visible;
+
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  animation: qm-in 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  /* Make sure it stays within overlay */
+  margin: auto;
+}
+
+@keyframes qm-in {
+  from { transform: translateY(-14px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* ════════════════════════════════════════
+   FIELDS
+════════════════════════════════════════ */
+.qm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.qm-field--full { width: 100%; }
+
+.qm-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Question Text Textarea */
+.qm-field textarea {
+  border: 1px solid #d0d0c8;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fff;
+  resize: vertical;
+  min-height: 110px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.qm-field textarea:focus { border-color: #1c5332; }
+
+/* ════════════════════════════════════════
+   ROW — Type + Score side by side
+════════════════════════════════════════ */
+.qm-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* Score field narrower than Type */
+.qm-row .qm-field:first-child { flex: 2; }
+.qm-row .qm-field:last-child  { flex: 1; min-width: 100px; }
+
+/* ════════════════════════════════════════
+   SELECT
+════════════════════════════════════════ */
+.qm-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.qm-select-wrap select {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #d0d0c8;
+  border-radius: 10px;
+  padding: 0 36px 0 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fff;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.qm-select-wrap select:focus { border-color: #1c5332; }
+.qm-select-wrap svg { position: absolute; right: 12px; pointer-events: none; }
+
+/* ════════════════════════════════════════
+   NUMBER INPUT
+════════════════════════════════════════ */
+.qm-field input[type="number"] {
+  height: 46px;
+  border: 1px solid #d0d0c8;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fff;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.qm-field input[type="number"]:focus { border-color: #1c5332; }
+
+/* ════════════════════════════════════════
+   OPTIONS (Multiple Choice)
+════════════════════════════════════════ */
+.qm-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qm-options input {
+  height: 46px;
+  border: 1px solid #d0d0c8;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fff;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.qm-options input:focus { border-color: #1c5332; }
+.qm-options input[readonly] {
+  background: #fff;
+  color: #555;
+  cursor: default;
+}
+
+/* ════════════════════════════════════════
+   ESSAY
+════════════════════════════════════════ */
+.qm-essay { min-height: 160px !important; }
+
+/* ════════════════════════════════════════
+   ACTIONS
+════════════════════════════════════════ */
+.qm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.qm-btn-save {
+  background: #1c5332;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 40px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.qm-btn-save:hover { background: #154026; }
+
+/* ════════════════════════════════════════
+   TABLET — 481px to 768px
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .qm-overlay {
+    padding: 16px;
+    align-items: flex-start; /* start from top so long modals aren't cut */
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .qm-modal {
+    padding: 24px 20px;
+    width: 100%;
+    gap: 16px;
+    border-radius: 14px;
+  }
+
+  .qm-row { flex-wrap: wrap; gap: 12px; }
+  .qm-row .qm-field:last-child { min-width: 100px; max-width: 140px; }
+
+  .qm-field label { font-size: 13px; }
+
+  .qm-select-wrap select,
+  .qm-field input[type="number"],
+  .qm-options input {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .qm-field textarea { font-size: 13px; min-height: 100px; }
+  .qm-btn-save { font-size: 13px; padding: 11px 28px; }
+}
+
+/* ════════════════════════════════════════
+   MOBILE — ≤ 480px  (bottom sheet)
+════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .qm-overlay {
+    padding: 0;
+    align-items: flex-end;
+    overflow-y: auto;
+  }
+
+  .qm-modal {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    padding: 20px 16px;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    gap: 14px;
+    animation: qm-slide-up 0.28s ease;
+    /* Allow internal scroll only if truly needed */
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+
+  /* drag handle */
+  .qm-modal::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: #d0d0c8;
+    border-radius: 2px;
+    margin: 0 auto 6px;
+    flex-shrink: 0;
+  }
+
+  .qm-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .qm-row .qm-field:last-child { max-width: 100%; min-width: unset; }
+
+  .qm-actions { justify-content: stretch; }
+
+  .qm-btn-save {
+    width: 100%;
+    text-align: center;
+    padding: 13px;
+    border-radius: 12px;
+  }
+}
+
+/* ════════════════════════════════════════
+   VERY SMALL — ≤ 360px
+════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .qm-modal { padding: 16px 12px; gap: 12px; }
+  .qm-field label,
+  .qm-select-wrap select,
+  .qm-field input[type="number"],
+  .qm-options input,
+  .qm-field textarea { font-size: 12px; }
+}
+
+@keyframes qm-slide-up {
+  from { transform: translateY(60px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
