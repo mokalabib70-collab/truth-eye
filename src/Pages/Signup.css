@@ -87,13 +87,11 @@
 .signup-card {
   background: #fffafa;
   border-radius: 16px;
-  padding: 15px 30px;
-  width: 480px;
-  max-width: 90%;
+  padding: 36px 40px;
+  width: 500px;
+  max-width: 100%;
   box-shadow: 0 4px 24px rgba(0,0,0,0.06);
   border: 1px solid #e8e8e0;
-  flex-shrink: 0;
-  margin-left: 5%;
 }
 
 .signup-card__welcome {
@@ -680,4 +678,5 @@
   /* Hide steps entirely on very small screens */
   .signup-steps { display: none; }
 }
+
 
