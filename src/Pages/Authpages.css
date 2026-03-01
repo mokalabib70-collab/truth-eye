@@ -336,6 +336,12 @@
    601px to 768px
 ════════════════════════════════════════ */
 @media (max-width: 768px) {
+  /* Allow page to scroll on mobile */
+  .auth-page {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
   .auth-topbar {
     padding: 12px 20px;
   }
@@ -343,19 +349,21 @@
   .auth-topbar__right  { gap: 10px; font-size: 13px; }
   .auth-topbar__btn    { padding: 7px 16px; font-size: 13px; }
 
-  /* Stack card + icon vertically, hide icon */
+  /* Stack card vertically, push it down from topbar */
   .auth-content {
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     gap: 20px;
-    padding: 16px 20px 40px;
+    padding: 60px 30px 70px; /* top padding pushes card down */
+    min-height: calc(100vh - 68px);
   }
 
   .auth-icon-wrap { display: none; }
 
-  /* Triangle smaller */
+  /* Triangle smaller so it doesn't overlap card */
   .auth-bg-triangle {
-    border-width: 0 0 55vh 100vw;
+    border-width: 0 0 38vh 100vw;
   }
 
   .auth-card {
@@ -363,6 +371,9 @@
     max-width: 500px;
     padding: 32px 28px;
     border-radius: 16px;
+    position: relative;
+    z-index: 6;
+    margin-top: 10%;
   }
 
   .auth-card__title { font-size: 20px; }
@@ -371,7 +382,6 @@
   .auth-input  { height: 46px; }
   .auth-btn    { height: 46px; font-size: 14px; }
 
-  /* Keep remember + forgot on same line (they wrap naturally via flex-wrap) */
   .auth-row { gap: 8px; }
 }
 
@@ -386,11 +396,10 @@
   .auth-topbar__right span { display: none; }
 
   .auth-content {
-    padding: 12px 16px 32px;
-    /* Ensure content scrolls if needed */
+    padding: 48px 16px 48px; /* top padding keeps card away from topbar */
     overflow-y: auto;
     justify-content: flex-start;
-    padding-top: 20px;
+    align-items: center;
   }
 
   .auth-card {
